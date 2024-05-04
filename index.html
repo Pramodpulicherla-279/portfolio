@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <script src="index.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+<body>
+
+<div class="navbar">
+    <a href="#Contact">CONTACT</a>
+    <a href="resume.html" target="_blank">RESUME</a>
+    <a href="#Work">WORK</a>
+    <a href="#Home">HOME</a>
+</div>
+
+<div class="header" id="home">
+    <h1><span class="name">PRAMOD PULICHERLA</span><br><br> <br><span class="Description"><span class="hi">Hi there 👋</span><br> i'm a UI/UX Designer, I Design Web and Mobile Applications, Digital products, I'm here to turn your dreams into focused and clear products.</span></h1>
+
+    <!-- Random shapes -->
+    <!-- <div class="shapes">
+        <div class="shape circle"></div>
+        <div class="shape square"></div>
+        <div class="shape triangle"></div>
+    </div> -->
+</div>
+
+
+    
+<div class="portfolio-item">
+        <h2 class="work">WORKS</h2>
+        
+        <div class="button-rectangle-container">
+                <div class="buttons-container">
+                        <button class="buttons" id="button1">Amazon Redesign</button>
+                        <button class="buttons" id="button2" >Digital Schooling design</button>
+                        <button class="buttons" id="button3" >Portfolio Design</button>
+                </div>
+                <div class="rectangle-container">
+                    <div class="rectangle1">
+                        <img class="img1" src="ss1.png" id="img1">
+                    </div>
+                    <div class="rectangle2">
+                        <img class="img2" src="ss1.png" style="display: none;" id="img2">
+                    </div>
+                    <div class="rectangle3">
+                        <img  class="img3" src="ss1.png" style="display: none;" id="img3">
+                    </div>
+                </div>
+                
+
+        </div>
+
+</div>
+
+    <!-- Add more portfolio items as needed -->
+    <div class="footer" id="home">
+        <h1 class="desc-footer">Hey there, I'm Pramod, a UI/UX Designer with a passion for creating seamless and delightful user experiences. I especially enjoy working on design operations and systems that help bring order to complexity.
+
+            When I'm not designing, you can find me enjoying music or playing video games. Thanks for stopping by my portfolio!</h1>
+        <h1 class="hitme">Do I have your Attention? <br> hit me up :)</h1>
+
+        <!-- Social media icons -->
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/pramod-pulicherla-0113b916a/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:your-email@example.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/yourphonenumber" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/your-instagram-profile/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="tel:yourphonenumber">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+    </div>
+
+
+<script>
+$(document).ready(function(){
+    $("#img2, #img3").hide();
+
+    $("#button1").mouseenter(function(){
+        $(".rectangle1").css("background-color", "#135D66").css("z-index", "2");
+        $("#img1").show();
+        $(".rectangle2, .rectangle3").css("z-index", "1");
+        $("#img2, #img3").hide();
+    });
+
+    $("#button2").mouseenter(function(){
+        $(".rectangle2").css("background-color", "#FFBC2C").css("z-index", "2");
+        $("#img2").show();
+        $(".rectangle1, .rectangle3").css("z-index", "1");
+        $("#img1, #img3").hide();
+    });
+
+    $("#button3").mouseenter(function(){
+        $(".rectangle3").css("background-color", "#1A4D2E").css("z-index", "2");
+        $("#img3").show();
+        $(".rectangle1, .rectangle2").css("z-index", "1");
+        $("#img1, #img2").hide();
+    });
+    $(".navbar a[href='#Home']").click(function(e) {
+        e.preventDefault(); // prevent the default action
+        $('html, body').animate({
+            scrollTop: $("#home").offset().top // scroll to the top of the "#home" element
+        }, 1000); // the duration of the scroll animation in milliseconds
+    });
+    $(".navbar a[href='#Work']").click(function(e) {
+        e.preventDefault(); // prevent the default action
+        $('html, body').animate({
+            scrollTop: $(".rectangle-container").offset().top // scroll to the top of the ".portfolio-item" element
+        }, 1000); // the duration of the scroll animation in milliseconds
+    });
+    $(".navbar a[href='#Contact']").click(function(e) {
+        e.preventDefault(); // prevent the default action
+        $('html, body').animate({
+            scrollTop: $(".footer").offset().top // scroll to the top of the ".portfolio-item" element
+        }, 1000); // the duration of the scroll animation in milliseconds
+    });
+});
+</script>
+</body>
+</html>
